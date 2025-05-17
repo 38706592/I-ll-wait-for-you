@@ -17,7 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
         { word: "Radiant Key", action: "openLocalHTML('pages/Radiant Key.html')" },
         { word: "Purity", action: "openLocalHTML('pages/Purity.html')" },
         { word: "Nexus", action: "openLocalHTML('pages/Nexus.html')" },
-
+        //光
+        //以上主線
         { word: "???", action: "openLocalHTML('pages/JKERT.html')" },
         { word: "Orphion_", action: "alert(':>')" },
         { word: "reset", action: "resetVideo()" },
