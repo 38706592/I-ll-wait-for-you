@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#intro-video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease;
+}
+
+#intro-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-height: 100vh;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+#main-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#background-animation::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle, transparent 20%, #000 80%),
+                linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    animation: backgroundMove 20s linear infinite;
+}
+
+@keyframes backgroundMove {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(-5%, -5%) rotate(1deg);
+    }
+}
+
+#input-container {
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+}
+
+#user-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    color: #fff;
+    font-size: 2em;
+    padding: 10px;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
+    caret-color: #fff;
+}
+
+#user-input:focus {
+    border-bottom-color: rgba(255,255,255,0.8);
+}
+
+#typed-text {
+    min-height: 50px;
+    margin-top: 20px;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+}
+
+.char {
+    display: inline-block;
+    animation: fadeIn 0.1s ease forwards;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#response-animation {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.success-animation {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid rgba(0, 255, 0, 0.4);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: successPulse 1.5s ease forwards;
+}
+
+.error-animation {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid rgba(255, 0, 0, 0.6);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: errorPulse 1.5s ease forwards;
+    pointer-events: none;
+}
+
+@keyframes successPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+        border-width: 2px;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0;
+        border-width: 1px;
+    }
+}
+
+@keyframes errorPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+        border-width: 2px;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+        border-width: 1.5px;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0;
+        border-width: 1px;
+    }
+} 

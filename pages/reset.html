@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重置页面</title>
+    <link rel="icon" href="../media/icon.png" type="image/png">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        h1 {
+            margin-bottom: 30px;
+        }
+        
+        button {
+            padding: 15px 30px;
+            background-color: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+            font-family: inherit;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>重置开场视频</h1>
+    <button id="reset-btn">点击重置并返回主页</button>
+
+    <script>
+        document.getElementById('reset-btn').addEventListener('click', function() {
+            localStorage.removeItem('introWatched');
+            window.location.href = '../index.html';
+        });
+    </script>
+</body>
+</html> 
