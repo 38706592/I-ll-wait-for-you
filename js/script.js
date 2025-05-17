@@ -9,24 +9,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const typedText = document.getElementById('typed-text');
     const responseAnimation = document.getElementById('response-animation');
     
-    // 单词列表 - 这里可以方便地添加或删除单词
+    
     const registeredWords = [
         { word: "Eldritch Key", action: "openLocalHTML('pages/Eldritch Key.html')" },
         { word: "Observe", action: "openLocalHTML('pages/Observe.html')" },
-        //暗
+
         { word: "Radiant Key", action: "openLocalHTML('pages/Radiant Key.html')" },
         { word: "Purity", action: "openLocalHTML('pages/Purity.html')" },
         { word: "Nexus", action: "openLocalHTML('pages/Nexus.html')" },
-        //光
-        //以上主線
-        { word: "???", action: "openLocalHTML('pages/....html')" },
+
+        { word: "???", action: "openLocalHTML('pages/JKERT.html')" },
         { word: "Orphion_", action: "alert(':>')" },
         { word: "reset", action: "resetVideo()" },
         { word: "Author", action: "openLocalHTML('pages/Author.html')" },
+        
         { word: "Answer", action: "openURL('https://youtu.be/o-YBDTqX_ZU?si=VeGyi5aVcau8TdaS')" },
-        { word: "hint", action: "openURL('https://youtu.be/o-YBDTqX_ZU?si=VeGyi5aVcau8TdaS')" },
-        { word: "cheat", action: "openURL('https://youtu.be/o-YBDTqX_ZU?si=VeGyi5aVcau8TdaS')" },
-
+        { word: "hint", action: "openURL('https://www.youtube.com/watch?v=cscuCIzItZQ')" },
+        { word: "cheat", action: "openURL('https://www.youtube.com/watch?v=ZlHRhzXezAc')" },
+        { word: "Tips", action: "openURL('https://www.youtube.com/watch?v=fC7oUOUEEi4')" },
     ];
     
     // 检查是否已经看过视频
