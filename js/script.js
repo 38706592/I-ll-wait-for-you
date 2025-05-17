@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { word: "Nexus", action: "openLocalHTML('pages/Nexus.html')" },
         //光
         //以上主線
-        { word: "???", action: "openLocalHTML('pages/....html')" },
+        { word: "???", action: "openLocalHTML('pages/===.html')" },
         { word: "Orphion_", action: "alert(':>')" },
         { word: "reset", action: "resetVideo()" },
         { word: "Author", action: "openLocalHTML('pages/Author.html')" },
